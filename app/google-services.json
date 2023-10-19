@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "826367725435",
+    "project_id": "adoptable-paws",
+    "storage_bucket": "adoptable-paws.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826367725435:android:91bf3c599600eadbc477de",
+        "android_client_info": {
+          "package_name": "com.example.petadoption"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaLIwoBY8KpPEaqczQFKq0yWl3ODNw4ls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
