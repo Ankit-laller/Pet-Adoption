@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
@@ -37,18 +36,38 @@
                 tools:layout_editor_absoluteX="15dp"
                 tools:layout_editor_absoluteY="14dp" />
 
-            <RelativeLayout
+
+
+            <LinearLayout
                 android:layout_alignParentEnd="true"
                 android:id="@+id/shape_layout"
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:background="@drawable/circluar_border"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                >
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/myCardView1"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    >
+                    <ImageView
+                        android:id="@+id/chat_frag"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/baseline_chat_bubble_24"
+                        />
+                </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/myCardView"
-                    android:layout_width="match_parent"
+                    android:layout_width="40dp"
+                    android:layout_marginStart="10dp"
                     android:layout_height="match_parent"
                     app:cardCornerRadius="50dp"
                     android:layout_centerHorizontal="true"
@@ -62,7 +81,7 @@
                         android:src="@drawable/user_image"
                         />
                 </androidx.cardview.widget.CardView>
-            </RelativeLayout>
+            </LinearLayout>
 
         </RelativeLayout>
         <!--    hello humans-->
@@ -96,46 +115,53 @@
                 android:drawableRight="@drawable/cust_search_icons"
                 android:inputType="text" />
         </androidx.cardview.widget.CardView>
-        <LinearLayout
+        <RadioGroup
             android:id="@+id/filterView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
+            android:weightSum="3"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="6dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_bar"
-            android:weightSum="3">
-            <com.google.android.material.chip.Chip
+            android:orientation="horizontal">
+
+            <!-- Add RadioButtons as Chips -->
+            <RadioButton
                 android:id="@+id/chip1"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                app:chipBackgroundColor="#F0F8FA"
-                android:layout_marginRight="30dp"
-                android:textAlignment="center"
+                android:layout_width="wrap_content"
                 android:layout_weight="1"
+                android:textAlignment="center"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/custom_chip_selector"
+                android:layout_height="wrap_content"
+                style="@style/NoCircleRadioButton"
                 android:text="Cat" />
 
-            <com.google.android.material.chip.Chip
+            <RadioButton
                 android:id="@+id/chip2"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:layout_marginRight="30dp"
-                android:layout_weight="1"
-                app:chipBackgroundColor="#F0F8FA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:background="@drawable/custom_chip_selector"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                style="@style/NoCircleRadioButton"
                 android:text="Dog" />
-            <com.google.android.material.chip.Chip
+
+            <RadioButton
                 android:id="@+id/chip3"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textAlignment="center"
-                app:chipBackgroundColor="#F0F8FA"
+                android:background="@drawable/custom_chip_selector"
+                android:layout_weight="1"
+                style="@style/NoCircleRadioButton"
                 android:text="Birds" />
 
-        </LinearLayout>
+        </RadioGroup>
 
         <TextView
             android:id="@+id/tv2"
@@ -149,21 +175,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/filterView"/>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            tools:listitem="@layout/items"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv2">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
 
-                />
-        </RelativeLayout>
+        </androidx.recyclerview.widget.RecyclerView>
 
 
 

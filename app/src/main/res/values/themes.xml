@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.PetAdoption" parent="Base.Theme.PetAdoption" />
+    <style name="NoCircleRadioButton" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@null</item>
+    </style>
+
 </resources>

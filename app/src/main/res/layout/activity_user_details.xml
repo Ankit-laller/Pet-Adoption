@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaf4f4"
+    android:orientation="vertical"
+    tools:context=".login_screen.UserDetailsActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp">
+
+
+        <TextView
+            android:id="@+id/top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="User Details"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginStart="130dp"/>
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignBottom="@+id/top"
+            android:background="#edede9"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_image"
+            app:civ_border_width="3dp"
+            android:src="@drawable/man_with_pet"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="20dp"
+            app:civ_border_color="#55BEC6"
+            android:layout_width="120dp"
+            android:layout_height="120dp" />
+
+        <ImageButton
+            android:id="@+id/user_image_picker_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/user_image"
+            android:layout_alignBottom="@id/user_image"
+            android:src="@drawable/baseline_add_a_photo_24"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv1">
+        <EditText
+            android:id="@+id/user_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/user_name"
+            android:padding="10dp"
+            android:background="@drawable/custom_input"
+            android:inputType="text" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv1">
+        <EditText
+            android:id="@+id/user_city_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/city"
+            android:padding="10dp"
+            android:background="@drawable/custom_input"
+            android:inputType="text" />
+    </androidx.cardview.widget.CardView>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/user_interest"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:elevation="10dp"-->
+<!--        app:cardCornerRadius="10dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv1">-->
+
+<!--        <RadioGroup-->
+<!--            android:id="@+id/radioGroup"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_height="wrap_content">-->
+
+
+<!--                    <RadioButton-->
+<!--                        android:id="@+id/dog"-->
+<!--                        android:layout_width="120dp"-->
+<!--                        android:layout_height="120dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:gravity="center"-->
+<!--                        android:background="@drawable/custom_radio_selector"-->
+<!--                        android:button="@color/white"-->
+<!--                        android:layout_margin="4dp"-->
+<!--                        android:elevation="10dp"-->
+<!--                        android:drawableRight="@drawable/dog_icon"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="bold" />-->
+
+
+<!--                    <RadioButton-->
+<!--                        android:id="@+id/cat"-->
+<!--                        android:layout_width="120dp"-->
+<!--                        android:layout_height="120dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:gravity="center"-->
+<!--                        android:background="@drawable/custom_radio_selector"-->
+<!--                        android:button="@color/white"-->
+<!--                        android:layout_margin="4dp"-->
+<!--                        android:elevation="10dp"-->
+<!--                        android:drawableRight="@drawable/cat_icon"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="bold" />-->
+
+
+
+<!--                    <RadioButton-->
+<!--                        android:id="@+id/bird"-->
+<!--                        android:layout_width="120dp"-->
+<!--                        android:layout_height="120dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:gravity="center"-->
+<!--                        android:background="@drawable/custom_radio_selector"-->
+<!--                        android:button="@color/white"-->
+<!--                        android:layout_margin="4dp"-->
+<!--                        android:elevation="10dp"-->
+<!--                        android:drawableRight="@drawable/bird_icon"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="bold" />-->
+
+
+
+<!--        </RadioGroup>-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+    <Button
+        android:id="@+id/next_btn"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="30dp"
+        android:text="Next"
+
+        />
+
+</LinearLayout>
